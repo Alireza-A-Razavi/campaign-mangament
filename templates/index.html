@@ -1,0 +1,80 @@
+{% extends "shared/_base.html" %}
+
+{% block title %} Awesompaign - Main Page {% endblock title %}
+
+{% block content %}
+  <div class="p-4 p-md-5 mb-4 mt-5 text-white rounded bg-dark">
+    <div class="col-md-6 px-0">
+      <h1 class="display-4 fst-italic">Let them voice be heard! Louder...</h1>
+      <p class="lead my-3">We have started our work since 2019 and had proceeded and succeeded much of campaigns to the parlements, city halls and even president themself...</p>
+      <p class="lead mb-0"><a href="/about/" class="text-white fw-bold">Continue reading...</a></p>
+    </div>
+  </div>
+
+  <div class="p-4 p-md-5 mb-4 mt-5 text-white rounded bg-dark">
+  	<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Running</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Succeeded</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Failed</button>
+  </li>
+</ul>
+<div class="tab-content" id="pills-tabContent">
+  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+    <div class="row">
+      {% if ongoing_objects %}
+        {% for object in ongoing_objects %}
+          <div class="col-lg-4 my-3">
+            <div class="card shadow-sm">
+              <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+
+              <div class="card-body">
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      {% else %}
+        <div class="col-lg-12 d-flex justify-content-center mt-5">
+          <h1 class="h3">There is no ongoing campaign right now!</h1>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+    <div class="row">
+    {% if succeeded_objects %}
+      {% for object in succeeded_objects %}
+      {% endfor %}
+    {% else %}
+      <div class="col-lg-12 d-flex justify-content-center mt-5">
+        <h1 class="h3">There is no succeeded campaign yet!</h1>
+      </div>
+    {% endif %}
+    </div>
+  </div>
+  <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+    {% if failed_objects %}
+    	{% for object in failed_objects %}
+    	{% endfor %}
+    {% else %}
+      <div class="col-lg-12 d-flex justify-content-center mt-5">
+        <h1 class="h3">Hooray there is no failed campaign yet!</h1>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+  </div>
+{% endblock content %}

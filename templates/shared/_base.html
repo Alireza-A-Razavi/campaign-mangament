@@ -1,0 +1,26 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <title>{% block title %}{% endblock title %}</title>
+    <link href="{% static '/assets/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static '/css/base.css' %}" rel="stylesheet">
+  	{% block extra_styles %}
+  	{% endblock extra_styles %}
+  </head>
+  <body>
+    {% include 'shared/navbar.html' %}
+  		<div class="container">
+          			<main>
+          {% block content %}
+  			  {% endblock content %}
+        </main>
+  		</div>
+    {% include 'shared/footer.html' %}
+    <script type="text/javascript" src="{% static '/assets/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    {% block extra_scripts %}
+    {% endblock extra_scripts %}
+  </body>
+</html>

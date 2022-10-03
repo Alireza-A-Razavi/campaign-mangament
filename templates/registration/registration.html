@@ -1,0 +1,82 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Register your account - </title>
+    
+    <!-- Bootstrap core CSS -->
+    <link href="{% static '/assets/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="{% static '/css/auth.css' %}" rel="stylesheet">
+  </head>
+  <body class="text-center">
+    
+<main class="form-signin">
+  <form method="POST" action="">
+    <h1 class="h3 mb-3 fw-normal">Please Signup</h1>
+
+    <div class="form-floating">
+      <input type="text" class="form-control top" id="floatingFirstName" placeholder="first name">
+      <label for="floatingUsernameInput">First Name</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control bot" id="floatingLastName" placeholder="last name">
+      <label for="floatingUsernameInput">Last Name</label>
+    </div>    
+
+    <div class="form-floating">
+      <input type="text" class="form-control top" id="floatingUsernameInput" placeholder="desired username">
+      <label for="floatingUsernameInput">Username</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input type="email" class="form-control bot" id="floatingInput" placeholder="name@example.com">
+      <label for="floatingInput">Email address</label>
+    </div>
+
+    <div class="form-floating">
+      <input type="password" class="form-control top" id="floatingPassword" placeholder="Password">
+      <label for="floatingPassword">Password</label>
+    </div>
+
+    <div class="form-floating">
+      <input type="password" class="form-control bot" id="floatingPassword2" placeholder="Confirm password">
+      <label for="floatingPassword2">Confirm password</label>
+    </div>
+
+    <button class="w-100 btn btn-lg btn-primary mt-2" type="submit">Sign Up</button>
+    <p class="mt-1">Already have account? <a href="{% url 'login' %}">Signin here</a></p>
+    <p class="mt-5 mb-3 text-muted">&copy; CS50</p>
+  </form>
+</main>
+    
+  </body>
+</html>
+
+
+<!-- 
+ To DO LIST for the page: 
+ - use bootstrap validators to validate the already added usernames
+ - add an ajax username and email validator -->
